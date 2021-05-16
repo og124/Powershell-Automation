@@ -8,11 +8,11 @@ Import-Module DnsClient
 # Define Variables with legitimate info
 $RGname="Resource Group Name"
 $port=1433
-$rulename="Allow John SQL Inbound"
+$rulename="Allow SQL Inbound"
 $nsgname="Network Security Group Name"
 
 # Resolve FQDN A Record and store as variable
-$Dynamic_IP = Resolve-DnsName -Name www.deletl.com -Type A -DnsOnly
+$Dynamic_IP = Resolve-DnsName -Name www.domain.com -Type A -DnsOnly
 
 # Get the Network Security Group resource
 $nsg = Get-AzNetworkSecurityGroup -Name $nsgname -ResourceGroupName $RGname
